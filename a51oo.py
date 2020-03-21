@@ -1,7 +1,6 @@
 import numpy as np
 
 #we declare three empty numpy arrays which we will be modifying to store the values of the three lfsr's
-
 class a5(object):
 
     def __init__(self,key):
@@ -13,7 +12,7 @@ class a5(object):
         self.reg_3 = key[41:64]
         print("registers loaded succesfully")
 
-    def get_majority(a,b,c):
+    def get_majority(self,a,b,c):
         if int(a) + int(b) + int(c) > 1:
             return True
         else:
@@ -24,7 +23,7 @@ class a5(object):
         # print(reg_1[7], reg_2[9], reg_3[9])
 
         while c != 0:
-            majority = a5.get_majority(self.reg_1[8], self.reg_2[10], self.reg_3[10])
+            majority = self.get_majority(self.reg_1[8], self.reg_2[10], self.reg_3[10])
             # print(majority)
             if self.reg_1[8] == majority:
                 first_bit = int(self.reg_1[18]) ^ int(self.reg_1[17]) ^ int(self.reg_1[16]) ^ int(self.reg_1[13])
@@ -85,4 +84,3 @@ def main():
     lfsr.clock_a5(int(input("Please enter the number of times to clock the Stream Generator")))
 
 main()
-
